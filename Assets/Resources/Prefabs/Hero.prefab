@@ -94,9 +94,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 045df883bde796b4290888a48a8185ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpSpeed: 16
   speed: 6
-  jumpSpeed: 8
-  gravity: 20
 --- !u!60 &1211555678792662286
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -122,17 +121,14 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 1.0625, y: -1.21875}
+    - - {x: -1.0393265, y: -1.8702347}
+      - {x: 0.77110076, y: -1.8545306}
       - {x: 1.0625, y: -0.28125}
+      - {x: 1.0331649, y: 0.08970639}
       - {x: 1, y: 0.59375}
       - {x: 0.8125, y: 1.03125}
       - {x: 0.625, y: 1.09375}
-      - {x: -0.625, y: 1.09375}
-      - {x: -0.8125, y: -0.03125}
-      - {x: -1.25, y: -0.34375}
-      - {x: -2.5625, y: -1.78125}
-      - {x: -2.5625, y: -1.84375}
-      - {x: 0.875, y: -1.84375}
+      - {x: -0.38658202, y: 0.94805056}
 --- !u!50 &6542411401410093227
 Rigidbody2D:
   serializedVersion: 4
@@ -145,10 +141,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 6.9765625
+  m_Mass: 4.7747264
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0.98
+  m_GravityScale: 0.89
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1

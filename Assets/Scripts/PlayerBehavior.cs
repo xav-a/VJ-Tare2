@@ -8,13 +8,10 @@ public class PlayerBehavior : MonoBehaviour
     public float speed = 10.0f;
 
     private bool isGrounded;
+    private bool atApex;
 
     private float horizontalAxis;
     private float verticalAxis;
-
-    private float isGroundedRayLength = 0.1f;
-    LayerMask layerMaskForGrounded;
-
 
 
     // Start is called before the first frame update
@@ -26,16 +23,35 @@ public class PlayerBehavior : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        horizontalAxis = Input.GetAxis("Horizontal");
-        verticalAxis = Input.GetAxis("Vertical");
+        this.horizontalAxis = Input.GetAxis("Horizontal");
+        this.verticalAxis = Input.GetAxis("Vertical");
 
         Vector2 movement = GetComponent<Rigidbody2D>().velocity;
+        movement.x = this.horizontalAxis * this.speed;
 
-        movement.x = horizontalAxis * speed;
+        transform.localScale = new Vector2(
+            Mathf.Sign(this.horizontalAxis),
+            1.0f
+        );
 
-        if (System.Math.Sign(verticalAxis) > 0 && isGrounded) {
-            movement.y = jumpSpeed;
-            isGrounded = false;
+        // Para el salto, cuando el salto llega a su pico, 3x la gravedad
+        if (System.Math.Sign(this.verticalAxis) > 0 && this.isGrounded)
+        {
+            movement.y = this.jumpSpeed;
+            this.isGrounded = false;
+        }
+
+        if (GetComponent<Rigidbody2D>().velocity.y < 0 && !this.isGrounded)
+        {
+            this.atApex = true;
+        }
+        if (this.isGrounded)
+        {
+            this.atApex = false;
+        }
+        if (this.atApex)
+        {
+            GetComponent<Rigidbody2D>().gravityScale = 3;
         }
 
         GetComponent<Rigidbody2D>().velocity = movement;
@@ -44,29 +60,9 @@ public class PlayerBehavior : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        isGrounded = true;
+        this.isGrounded = true;
     }
 
-    /* bool isGrounded
-    {
-    //https://answers.unity.com/questions/919654/how-do-you-make-a-2d-rigidbody-jump-once-in-unity.html
-        get {
-            Vector3 position = transform.position;
-            int layerMask = 1 << GetComponent<SpriteRenderer>().sortingOrder;
 
-
-
-            position.y = GetComponent<Collider2D>().bounds.min.y + 0.01f;
-            float length = isGroundedRayLength + 0.01f;
-
-            Debug.DrawRay(position, Vector3.down * length);
-            bool grounded = Physics2D.Raycast(
-                position,
-                Vector3.down,
-                length
-            );
-            return grounded;
-        }
-    } */
 
 }
