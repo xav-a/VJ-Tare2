@@ -39,16 +39,15 @@ public class PlayerBehavior : MonoBehaviour
         {
             movement.y = this.jumpSpeed;
             this.isGrounded = false;
+            GetComponent<Animator>().SetBool("running", true);
         }
 
         if (GetComponent<Rigidbody2D>().velocity.y < 0 && !this.isGrounded)
         {
             this.atApex = true;
+            GetComponent<Animator>().SetBool("running", false);
         }
-        if (this.isGrounded)
-        {
-            this.atApex = false;
-        }
+
         if (this.atApex)
         {
             GetComponent<Rigidbody2D>().gravityScale = 3;
