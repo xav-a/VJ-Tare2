@@ -11,9 +11,12 @@ public class CameraBehavior : MonoBehaviour
     public GameObject player;
 
     float camVertExtent, camHorzExtent;
+    AudioSource audioData;
 	// Start is called before the first frame update
 	void Start ()
     {
+        audioData = GetComponent<AudioSource>();
+        audioData.Play(0);
         this.camVertExtent = Camera.main.orthographicSize;
         this.camHorzExtent = Camera.main.aspect * this.camVertExtent;
         this.areaBounds = this.area.bounds;
