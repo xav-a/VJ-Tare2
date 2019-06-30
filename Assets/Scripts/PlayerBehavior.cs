@@ -64,7 +64,7 @@ public class PlayerBehavior : MonoBehaviour
         this.isGrounded = true;
     }
 
-    void SetAnimationState()
+    private void SetAnimationState()
     {
         // 0 if none - IDLE
         // 1 if horizontal only - RUNNING
