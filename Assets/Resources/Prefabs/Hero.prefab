@@ -1,84 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1167370026581997445
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1841585852284726869}
-  - component: {fileID: 6795920366521681474}
-  m_Layer: 0
-  m_Name: hero-idle-1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1841585852284726869
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1167370026581997445}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 5070371632869171380}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &6795920366521681474
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1167370026581997445}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2e93c637a24e04d8ea6b2cfd9df53739, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 6.25, y: 3.6875}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
 --- !u!1 &4655469060646749065
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,6 +14,7 @@ GameObject:
   - component: {fileID: 1211555678792662286}
   - component: {fileID: 6542411401410093227}
   - component: {fileID: 2787263986618529707}
+  - component: {fileID: 945296234637222795}
   m_Layer: 0
   m_Name: Hero
   m_TagString: Untagged
@@ -110,8 +32,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1841585852284726869}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -149,15 +70,15 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -243461335
+  m_SortingLayer: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 2e93c637a24e04d8ea6b2cfd9df53739, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 0.59}
+  m_Size: {x: 6.25, y: 3.6875}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -175,8 +96,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 045df883bde796b4290888a48a8185ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpSpeed: 16
-  speed: 6
+  jumpSpeed: 16.5
+  speed: 12
+  gravity: 3.3
 --- !u!60 &1211555678792662286
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -189,27 +111,27 @@ PolygonCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 6.25, y: 3.6875}
-    newSize: {x: 1, y: 0.59}
+    newSize: {x: 6.25, y: 3.6875}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -1.0393265, y: -1.8702347}
-      - {x: 0.77110076, y: -1.8545306}
-      - {x: 1.0625, y: -0.28125}
-      - {x: 1.0331649, y: 0.08970639}
-      - {x: 1, y: 0.59375}
-      - {x: 0.8125, y: 1.03125}
-      - {x: 0.625, y: 1.09375}
-      - {x: -0.38658202, y: 0.94805056}
+    - - {x: -0.009703875, y: 0.31937322}
+      - {x: -0.8152542, y: -1.7901195}
+      - {x: -0.5757869, y: -1.743463}
+      - {x: 0.19986111, y: -0.861186}
+      - {x: 0.5914604, y: -1.7902558}
+      - {x: 0.62104934, y: 0.49639648}
+      - {x: 0.64439934, y: 0.53078926}
+      - {x: 0.5784518, y: 0.8158765}
 --- !u!50 &6542411401410093227
 Rigidbody2D:
   serializedVersion: 4
@@ -222,10 +144,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 4.7747264
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0.89
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -250,3 +172,51 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!66 &945296234637222795
+CompositeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4655469060646749065}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_GeometryType: 0
+  m_GenerationType: 0
+  m_EdgeRadius: 0
+  m_ColliderPaths:
+  - m_Collider: {fileID: 1211555678792662286}
+    m_ColliderPaths:
+    - - X: 5914527
+        Y: -17902374
+      - X: 6210498
+        Y: 4963974
+      - X: 6443990
+        Y: 5307904
+      - X: 5784477
+        Y: 8158730
+      - X: -97040
+        Y: 3193726
+      - X: -8152482
+        Y: -17901185
+      - X: -5757863
+        Y: -17434623
+      - X: 1998632
+        Y: -8611908
+  m_CompositePaths:
+    m_Paths:
+    - - {x: 0.6210498, y: 0.4963974}
+      - {x: 0.644399, y: 0.5307904}
+      - {x: 0.5784477, y: 0.815873}
+      - {x: -0.009704, y: 0.3193726}
+      - {x: -0.8152482, y: -1.7901185}
+      - {x: -0.5757863, y: -1.7434624}
+      - {x: 0.1998632, y: -0.8611908}
+      - {x: 0.5914527, y: -1.7902374}
+  m_VertexDistance: 0.0005
+  m_OffsetDistance: 0.000005

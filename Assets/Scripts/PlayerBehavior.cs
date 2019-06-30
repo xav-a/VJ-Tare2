@@ -6,6 +6,7 @@ public class PlayerBehavior : MonoBehaviour
 {
     public float jumpSpeed = 9.8f;
     public float speed = 10.0f;
+    public float gravity = 3.0f;
 
     private bool isGrounded;
     private bool atApex;
@@ -13,6 +14,10 @@ public class PlayerBehavior : MonoBehaviour
     private float horizontalAxis;
     private float verticalAxis;
 
+    private const int IDLE = 0;
+    private const int RUNNING = 1;
+    private const int JUMPING = 1;
+    private const int FALLING = -1;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +30,7 @@ public class PlayerBehavior : MonoBehaviour
     {
         this.horizontalAxis = Input.GetAxis("Horizontal");
         this.verticalAxis = Input.GetAxis("Vertical");
+        Rigidbody2D body2D = GetComponent<Rigidbody2D>();
 
         Vector2 movement = GetComponent<Rigidbody2D>().velocity;
         movement.x = this.horizontalAxis * this.speed;
@@ -39,22 +45,18 @@ public class PlayerBehavior : MonoBehaviour
         {
             movement.y = this.jumpSpeed;
             this.isGrounded = false;
-            GetComponent<Animator>().SetBool("running", true);
         }
-
-        if (GetComponent<Rigidbody2D>().velocity.y < 0 && !this.isGrounded)
+        else if (body2D.velocity.y < 0 && !this.isGrounded)
         {
             this.atApex = true;
-            GetComponent<Animator>().SetBool("running", false);
         }
-
-        if (this.atApex)
+        else if (this.atApex)
         {
-            GetComponent<Rigidbody2D>().gravityScale = 3;
+            body2D.gravityScale = this.gravity;
         }
+        body2D.velocity = movement;
 
-        GetComponent<Rigidbody2D>().velocity = movement;
-
+        this.SetAnimationState();
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -62,6 +64,18 @@ public class PlayerBehavior : MonoBehaviour
         this.isGrounded = true;
     }
 
-
+    void SetAnimationState()
+    {
+        // 0 if none - IDLE
+        // 1 if horizontal only - RUNNING
+        // +/-(>1) if vertical only - JUMPINT/FALLING
+        GetComponent<Animator>().SetBool("onGround", isGrounded);
+        int hDirection = System.Math.Sign(this.horizontalAxis);
+        int vDirection = System.Math.Sign(this.verticalAxis);
+        int h = System.Math.Abs(hDirection);
+        int v = System.Math.Abs(vDirection);
+        GetComponent<Animator>().SetInteger("horizontal", h);
+        GetComponent<Animator>().SetInteger("vertical", v);
+    }
 
 }
