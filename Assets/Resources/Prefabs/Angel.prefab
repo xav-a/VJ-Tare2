@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2146450143825121603}
   - component: {fileID: 1326060023320151902}
   - component: {fileID: 296740848431321919}
+  - component: {fileID: 8796928682035723487}
   m_Layer: 0
   m_Name: Angel
   m_TagString: Untagged
@@ -137,3 +138,16 @@ PolygonCollider2D:
       - {x: -0.26600313, y: -1.8269436}
       - {x: 0.625, y: -1.59375}
       - {x: 0.9887216, y: -0.7490193}
+--- !u!114 &8796928682035723487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766305730144641419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bf51e4e3058e79439bbbc8f7edb2b67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoint: {fileID: 0}

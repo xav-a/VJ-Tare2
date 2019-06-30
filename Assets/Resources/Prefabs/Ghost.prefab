@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8631227420777741527}
   - component: {fileID: 8631227420777741526}
   - component: {fileID: 2975171013995030390}
+  - component: {fileID: 5851578612190903207}
   m_Layer: 0
   m_Name: Ghost
   m_TagString: Untagged
@@ -136,3 +137,16 @@ PolygonCollider2D:
       - {x: 0.53125, y: -1.28125}
       - {x: 1.15625, y: -0.71875}
       - {x: 1.15625, y: 0.84375}
+--- !u!114 &5851578612190903207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8631227420777741521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bf51e4e3058e79439bbbc8f7edb2b67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoint: {fileID: 0}
